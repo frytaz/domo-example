@@ -1,0 +1,17 @@
+{
+  "name": "domo-example",
+  "version": "0.0.0",
+  "description": "Example usage of domo-kun",
+  "main": "index.js",
+  "dependencies": {
+    "domo-kun": "~0.1.0",
+    "domo-eval": "~1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "Riku Rouvila",
+  "license": "BSD"
+}
