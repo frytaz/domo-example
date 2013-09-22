@@ -1,4 +1,4 @@
-# Domo-kun example
+# Domo-kun examples
 
 ## Installation
 
