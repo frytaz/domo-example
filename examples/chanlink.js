@@ -1,3 +1,5 @@
+// Links 2 servers together
+
 var _ = require('underscore'),
     Domo = require('domo-kun');
 
