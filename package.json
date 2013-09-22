@@ -6,7 +6,9 @@
   "dependencies": {
     "domo-kun": "~0.1.0",
     "domo-eval": "~1.0.1",
-    "underscore": "~1.5.2"
+    "underscore": "~1.5.2",
+    "cheerio": "~0.12.2",
+    "request": "~2.27.0"
   },
   "devDependencies": {},
   "scripts": {
