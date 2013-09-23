@@ -22,6 +22,9 @@ var typoFixes = {};
 domo.route('!fix', function(res) {
   this.say(res.channel, "Syntax: \n!fix :typo :fix  -  register a new typo fix\n!unfix :typo  -  unregister typo fix\n");
 });
+domo.route('!fix --list', function(res) {
+  this.say(res.channel, 'Current replacements: ' + JSON.stringify(typoFixes));
+});
 
 domo.route('!fix :typo :fix', function(res) {
   typoFixes[res.params.typo] = res.params.fix;
