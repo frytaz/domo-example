@@ -6,7 +6,7 @@ domo = new Domo({
   nick: 'Domo',
   userName: 'Domo',
   realName: 'Domo the awesome IRC-bot',
-  address: 'irc.freenode.org',
+  address: 'irc.freenode.net',
   channels: ['#domo'],
   users: [
     {
