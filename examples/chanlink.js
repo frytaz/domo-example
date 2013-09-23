@@ -3,6 +3,7 @@
 var _ = require('underscore'),
     Domo = require('domo-kun');
 
+// Base configuration
 var config = {
   nick: 'Domo',
   userName: 'Domo',
@@ -17,19 +18,23 @@ var config = {
   debug: true
 };
 
+// Initialize 2 Domo instances to 2 different servers
+var domoFreenode = new Domo(_.extend({address: 'irc.freenode.net'}, config));
+var domoDatnode = new Domo(_.extend({address: 'irc.datnode.net'}, config));
+
+
 var linkToInstance = function(domoInstance) {
+  // Returns a function that redirects all received messages to received Domo instance
   return function(res) {
-    if(config.channels.indexOf(res.channel) === -1) return;
     domoInstance.say(res.channel, domoInstance.config.address + ' | <' + res.nick + '> ' + res.message);
   };
 };
 
-var domoFreenode = new Domo(_.extend({address: 'irc.freenode.net'}, config));
-var domoDatnode = new Domo(_.extend({address: 'irc.datnode.net'}, config));
-
+// Route Domos to our link function
 domoFreenode.route('*', linkToInstance(domoDatnode));
 domoDatnode.route('*', linkToInstance(domoFreenode));
 
+// Connect both instances
 domoFreenode.connect();
 domoDatnode.connect();
 
