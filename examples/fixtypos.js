@@ -31,7 +31,7 @@ domo.route('!fix :typo :fix', function(res) {
   this.say(res.channel, 'Replacing "' + res.params.typo + '" with ' + res.params.fix);
 });
 
-domo.route('!unfix :typo', function(res) {
+domo.route('!fix --remove :typo', function(res) {
   if(typoFixes.hasOwnProperty(res.params.typo)) {
     delete typoFixes[res.params.typo];
   }
